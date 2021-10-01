@@ -27,78 +27,91 @@
 <!-- Main page content -->
 <body>
 
-  <!-- Update this with your GitHub repo URL -->
-  <span id='forkongithub'><a href='https://github.com/DS4200-Fall21-Sec02/hw-03-practice-d3-ds-gc-mc.git'>Fork me on GitHub</a></span>
+<!-- Update this with your GitHub repo URL -->
+<span id='forkongithub'><a href='https://github.com/DS4200-Fall21-Sec02/hw-03-practice-d3-ds-gc-mc.git'>Fork me on GitHub</a></span>
 
-  <!-- Writeup -->
-  <div class='content-column'>
-    <h1>hw-03: Practicing D3</h1>
+<!-- Writeup -->
+<div class='content-column'>
+  <h1>hw-03: Practicing D3</h1>
 
-    <p>
-      The first graph, the bar chart shows the the prior criminal history of those detained pretrial. The y-axis shows the percentage of the total detained population. The x-axis seperates them out by year. Finally, the different colors represent the different groups of prior felonies.The categories are, 1 felony, 2-4 felonies, 5 or more felony convictions.
+  <h2>Simple formatting instructions</h2>
 
-      The second graph, the scatter plot is a different way of showing this same information.
-    </p>
+  <p>
+    Use <code>&lt;p&gt;&lt;/p&gt;</code> tags to enclose a paragraph in html. <br>
+    Use <code>&lt;h2&gt;&lt;/h2&gt;</code> to enclose a heading. <br>
+    Use <code>&lt;br&gt;</code> to force a line break.
+  </p>
 
-    <h2>Simple formatting instructions</h2>
+  <p>
+    There are two premade <code>div</code> in this document that will hold your visualizations. The first one has id <code>vis1</code>, the second one has <code>vis2</code>. Write your explanation and analysis close to each of your visualizations.
+  </p>
 
-    <p>
-      Use <code>&lt;p&gt;&lt;/p&gt;</code> tags to enclose a paragraph in html. <br>
-      Use <code>&lt;h2&gt;&lt;/h2&gt;</code> to enclose a heading. <br>
-      Use <code>&lt;br&gt;</code> to force a line break.
-    </p>
+  <p>
+    Your first visualization goes here:
+  </p>
 
-    <p>
-      There are two premade <code>div</code> in this document that will hold your visualizations. The first one has id <code>vis1</code>, the second one has <code>vis2</code>. Write your explanation and analysis close to each of your visualizations.
-    </p>
+  <!-- Visualization goes here -->
+  <div class='vis-holder' id='vis1'></div>
+  <script> </script>
 
-    <p>
-      Your first visualization goes here:
-    </p>
-
-    <!-- Visualization goes here -->
-    <div class='vis-holder' id='vis1'></div>
-    <script> </script>
-
-    <p>
-      The above visual shows how many people suffered some number of convictions in a given year.
-    </p>
+  <p>
+    The above visual shows how many people suffered some number of convictions in a given year. Using data from the Bureau of Justice Statistics Pretrial Detention and Misconduct for Federal Dispositions, we sought to visualize how many priors the population of inmates that are detained pretrial have. The y-axis is number of individuals. The x-axis is years. The different colors represent the number of priors (as split into categories by BJS).
+  </p>
 
 
-	  <p>
-      Your second visualization goes here:
-    </p>
+  <p>
+    Your second visualization goes here:
+  </p>
 
-    <!-- Visualization goes here -->
-    <div class='vis-holder' id='vis2'></div>
-    <script> </script>
+  <!-- Visualization goes here -->
+  <div class='vis-holder' id='vis2'></div>
+  <script> </script>
 
-    <h2>Acknowledgments</h2>
+  <p>
+    Our second graph represents different individuals heights and weights. This is best represented as a scatter plot as there we do not want to show rates or change over time. All dots are the same color. The x-axis represents height and the y-axis represents weight. All dots represent an individual.
+  </p>
+  </p>
 
-    <p>
-      <em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em>
-      https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html
-    </p>
+  <h2>Acknowledgments</h2>
 
-    <ul>
-      <li><a href='https://d3js.org/'>
-        D3: Data-Driven Documents</a>
-        by Mike Bostock is used for manipulating the DOM to create visualizations.
-      </li>
-      <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
-        Pure CSS responsive 'Fork me on GitHub' ribbon</a>
-        by Chris Heilmann is used to create the banner that links back to the source code repository.
-      </li>
-      <li><a href='https://github.com/NEU-DS-4200-F20-Staff/Assignment--D3_Basic_Charts'>
-        Assignment--D3_Basic_Charts</a>
-        by Cody Dunne is used to create this assignment.
-      </li>
-    </ul>
-  </div>
+  <p>
+    <em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em>
+    <br>
+  <li><a href='https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html'>D3 Graph Gallery: Grouped Bar Chart</a>
+       insight of how to implement grouped bar chart
+  </li>
+  <li><a href='hhttps://www.d3-graph-gallery.com/graph/scatter_basic.html'>D3 Graph Gallery: Scatterplot</a>
+    insight of how to implement scatter plot
+  </li>
+  <li><a href='https://observablehq.com/@d3/grouped-bar-chart'>Observable: Grouped Bar Chart</a>
+    viewed to help with debugging grouped bar chart
+  </li>
+  <li><a href='http://bl.ocks.org/weiglemc/6185069'>Bl.ocks: Scatterplot</a>
+    viewed to help with debugging scatter plot
+  </li>
+  </p>
 
-  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
-    <script src = "js\main.js"> </script>
-  <script src="lib\d3.v6.1.1\d3.js"></script>
+  <ul>
+    <li><a href='https://d3js.org/'>
+      D3: Data-Driven Documents</a>
+      by Mike Bostock is used for manipulating the DOM to create visualizations.
+    </li>
+    <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
+      Pure CSS responsive 'Fork me on GitHub' ribbon</a>
+      by Chris Heilmann is used to create the banner that links back to the source code repository.
+    </li>
+    <li><a href='https://github.com/NEU-DS-4200-F20-Staff/Assignment--D3_Basic_Charts'>
+      Assignment--D3_Basic_Charts</a>
+      by Cody Dunne is used to create this assignment.
+    </li>
+  </ul>
+</div>
+
+<!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+<script src = "js\main.js"> </script>
+<script src="lib\d3.v6.1.1\d3.js"></script>
+
+
 </body>
 
 </html>
