@@ -23,7 +23,7 @@
   <meta name='theme-color' content='#ffffff'>
 
 </head>
-
+<script src="https://d3js.org/d3.v6.min.js"></script>
 <!-- Main page content -->
 <body>
 
@@ -35,9 +35,9 @@
     <h1>hw-03: Practicing D3</h1>
 
     <p>
-      The first graph, the bar chart shows the the prior criminal history of those detained pretrial. The y-axis shows the percentage of the total detained population. The x-axis seperates them out by year. Finally, the different colors represent the different groups of prior felonies.The categories are, 1 felony, 2-4 felonies, 5 or more felony convictions.  
+      The first graph, the bar chart shows the the prior criminal history of those detained pretrial. The y-axis shows the percentage of the total detained population. The x-axis seperates them out by year. Finally, the different colors represent the different groups of prior felonies.The categories are, 1 felony, 2-4 felonies, 5 or more felony convictions.
 
-      The second graph, the scatter plot is a different way of showing this same information. 
+      The second graph, the scatter plot is a different way of showing this same information.
     </p>
 
     <h2>Simple formatting instructions</h2>
@@ -58,67 +58,11 @@
 
     <!-- Visualization goes here -->
     <div class='vis-holder' id='vis1'></div>
-    <script>
+    <script> </script>
 
-      const  margin = {
-    top: 60,
-    left: 50,
-    right: 30,
-    bottom: 35 }, width = 500 - margin.left - margin.right,
-  height = 500 - margin.top - margin.bottom;
-
-  const svg.d3.select("vis1").append("svg").attr("width", width + margin.left + margin.righ)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform",`translate(${margin.left},${margin.top})`);
-
-  d3.csv("data/Priors_Clean.csv").then (function (data) {
-    const subgroups = data.columns.slice(1)
-
-    const years = data.map(d=> d.year)
-
-    console.log(years)
-
-    const x = d3.scaleBand().domain(years).range([0, width]).padding([.2])
-    svg.append("g").attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x).tickSize(0));
-
-
-    const y = d3.scaleLinear()
-    .domain([0, 40])
-    .range([ height, 0 ]);
-  svg.append("g")
-    .call(d3.axisLeft(y));
-
-
-    const xSubgroup = d3.scaleBand()
-    .domain(subgroups)
-    .range([0, x.bandwidth()])
-    .padding([0.05])
-
-
-    const color = d3.scaleOrdinal()
-    .domain(subgroups)
-    .range(['#e41a1c','#377eb8','#4daf4a'])
-
-
-  svg.append("g")
-    .selectAll("g")
-    // Enter in data = loop group per group
-    .data(data)
-    .join("g")
-      .attr("transform", d => `translate(${x(d.group)}, 0)`)
-    .selectAll("rect")
-    .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
-    .join("rect")
-      .attr("x", d => xSubgroup(d.key))
-      .attr("y", d => y(d.value))
-      .attr("width", xSubgroup.bandwidth())
-      .attr("height", d => height - y(d.value))
-      .attr("fill", d => color(d.key));
-
-})
-</script>
+    <p>
+      The above visual shows how many people suffered some number of convictions in a given year.
+    </p>
 
 
 	  <p>
@@ -127,74 +71,13 @@
 
     <!-- Visualization goes here -->
     <div class='vis-holder' id='vis2'></div>
-
-        <script>
-
-      const  margin = {
-    top: 60,
-    left: 50,
-    right: 30,
-    bottom: 35 }, width = 500 - margin.left - margin.right,
-  height = 500 - margin.top - margin.bottom;
-
-  const svg.d3.select("vis1").append("svg").attr("width", width + margin.left + margin.righ)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform",`translate(${margin.left},${margin.top})`);
-
-  d3.csv("data/Priors_Clean.csv").then (function (data) {
-    const subgroups = data.columns.slice(1)
-
-    const years = data.map(d=> d.year)
-
-    console.log(years)
-
-    const x = d3.scaleBand().domain(years).range([0, width]).padding([.2])
-    svg.append("g").attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x).tickSize(0));
-
-
-    const y = d3.scaleLinear()
-    .domain([0, 40])
-    .range([ height, 0 ]);
-  svg.append("g")
-    .call(d3.axisLeft(y));
-
-
-    const xSubgroup = d3.scaleBand()
-    .domain(subgroups)
-    .range([0, x.bandwidth()])
-    .padding([0.05])
-
-
-    const color = d3.scaleOrdinal()
-    .domain(subgroups)
-    .range(['#e41a1c','#377eb8','#4daf4a'])
-
-
-  svg.append("g")
-    .selectAll("g")
-    // Enter in data = loop group per group
-    .data(data)
-    .join("g")
-      .attr("transform", d => `translate(${x(d.group)}, 0)`)
-    .selectAll("circle")
-    .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
-    .join("circle")
-      .attr("x", d => xSubgroup(d.key))
-      .attr("y", d => y(d.value))
-      .attr("width", xSubgroup.bandwidth())
-      .attr("height", d => height - y(d.value))
-      .attr("fill", d => color(d.key));
-
-})
-</script>
+    <script> </script>
 
     <h2>Acknowledgments</h2>
 
     <p>
       <em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em>
-      https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html 
+      https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html
     </p>
 
     <ul>
